@@ -1,0 +1,17 @@
+{
+    "name": "ignacio/package-mercadopago",
+    "description": "Package mercadopago for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ignacio Martins",
+            "email": "ig.mar.oli@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^5.0@dev"
+    }
+}
