@@ -10,8 +10,26 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "mercadopago/dx-php": "dev-master"
+    },
     "require-dev": {
-        "orchestra/testbench": "^5.0@dev"
+    },
+    "autoload":{
+        "psr-4":{
+            "Ignacio\\MercadoPago\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4": {
+            "Ignacio\\MercadoPago\\Tests\\": "tests/"
+        }
+    },
+    "extra":{
+        "laravel": {
+            "providers": [
+                "Ignacio\\MercadoPago\\MercadoPagoServiceProvider"
+            ]
+        }
     }
 }
