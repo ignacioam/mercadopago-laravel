@@ -3,14 +3,18 @@
 namespace Ignacio\MercadoPago\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-
-use MercadoPago;
+use Ignacio\MercadoPago\Repositories\MercadoPagoRepository;
 
 class MercadoPagoController extends Controller{
      
+     private $r;
+
+     public function __construct(MercadoPagoRepository $r){
+          $this->r = $r;
+     }
+
      public function index(){
-          MercadoPago\SDK::setAccessToken(config("mercadopago.sandbox.access_token"));
-          return "esaa";
+          return $this->r->save("asdasdasdasd");
      }
 
 }
