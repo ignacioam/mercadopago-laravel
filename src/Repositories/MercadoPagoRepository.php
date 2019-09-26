@@ -5,10 +5,8 @@ namespace Ignacio\MercadoPago\Repositories;
 use MercadoPago;
 
 class MercadoPagoRepository{
-     public function save($mp){
+     public function getPaymentMethdos(){
           MercadoPago\SDK::setAccessToken(config("mercadopago.access_token"));
-          $payment = new MercadoPago\Payment();
-          $payment->transaction_amount = 2000;
-          dd($payment);
+          return MercadoPago\SDK::get("/v1/payment_methods");
      }
 }

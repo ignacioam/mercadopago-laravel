@@ -1,5 +1,5 @@
 <?php
 
 Route::namespace('Ignacio\MercadoPago\Http\Controllers')->group(function(){
-     Route::get('prueba', 'MercadoPagoController@index');
+     Route::get('prueba', 'TestController@test_pay');
 });
