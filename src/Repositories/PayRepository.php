@@ -4,9 +4,10 @@ namespace Ignacio\MercadoPago\Repositories;
 
 use MercadoPago\{SDK, Payment};
 use Ignacio\MercadoPago\Models\Pay;
+use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
 
-class PayRepository{
-
+class PayRepository implements PayRepositoryInterface{
+     
      public function __construct(){
           SDK::setAccessToken(config('mercadopago.access_token'));
      }

@@ -2,6 +2,8 @@
 
 namespace Ignacio\MercadoPago;
 
+use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
+use Ignacio\MercadoPago\Repositories\PayRepository;
 use Illuminate\Support\ServiceProvider;
 
 class MercadoPagoServiceProvider extends ServiceProvider{
@@ -31,6 +33,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       * @return void
       */
      private function registerResources(){
+          $this->registerFacades();
           $this->registerRoutes();
      }
 
@@ -66,5 +69,16 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       */
      private function registerRoutes(){
           $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+     }
+
+     /**
+      * Facades
+      *
+      * @return void
+      */
+     protected function registerFacades(){
+          $this->app->singleton('MP', function($app){
+               return new PayRepository();
+          });
      }
 }
