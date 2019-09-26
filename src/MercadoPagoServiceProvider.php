@@ -35,7 +35,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
      }
 
      /**
-      * Public files
+      * Publishing files
       *
       * @return void
       */
@@ -44,6 +44,19 @@ class MercadoPagoServiceProvider extends ServiceProvider{
           $this->publishes([
                __DIR__.'/../config/mercadopago.php' => config_path('mercadopago.php'),
           ]);
+
+          $this->registerPublic();
+     }
+
+     /**
+      * Public files
+      *
+      * @return void
+      */
+     private function registerPublic(){
+          $this->publishes([
+               __DIR__.'/../public/js/mercadopago.js' => public_path('js/mercadopago/mercadopago.js'),
+          ], 'mercadopago-js');
      }
 
      /**

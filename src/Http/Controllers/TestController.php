@@ -3,15 +3,18 @@
 namespace Ignacio\MercadoPago\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Ignacio\MercadoPago\Repositories\PayRepository;
+use Ignacio\MercadoPago\Repositories\{PayRepository, MethodRepository};
 use Ignacio\MercadoPago\Models\Pay;
+
 
 class TestController extends Controller{
      
      private $r;
+     private $m;
 
-     public function __construct(PayRepository $r){
+     public function __construct(PayRepository $r, MethodRepository $m){
           $this->r = $r;
+          $this->m = $m;
      }
 
      public function test_pay(){
@@ -58,7 +61,10 @@ class TestController extends Controller{
           ]);
 
           $this->r->pay($pay);
+     }
 
+     public function test_method(){
+          return $this->m->getAll();
      }
 
 }
