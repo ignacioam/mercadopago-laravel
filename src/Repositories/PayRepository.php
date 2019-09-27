@@ -19,12 +19,13 @@ class PayRepository implements PayRepositoryInterface{
       * @return void
       */
      public function pay(Pay $pay){
+          
           $payment = new Payment([
                'token' => $pay->token,
                'external_reference' => $pay->external_reference,
                'statement_descriptor' => $pay->statement_descriptor,
                'payment_method_id' => $pay->payment_method_id,
-               'transaction_amount' => $pay->transaction_amount,
+               'transaction_amount' => $transaction_amount,
                'installments' => $pay->installments,
                'payer' => array(
                     'email' => $pay->payer['email'],
@@ -41,7 +42,7 @@ class PayRepository implements PayRepositoryInterface{
                     'items' => $pay->additional_info['items']
                )
           ]);
-          
+
           $response = $payment->save();
 
           if($response){

@@ -12,7 +12,7 @@ class Pay extends Model{
      * @var array
      */
      protected $fillable = [
-          'token', 'external_reference', 'statement_descriptor', 'payment_method_id', 'transaction_amount', 'installments', 'payer', 'additional_info'
+          'token', 'external_reference', 'statement_descriptor', 'payment_method_id', 'transaction_amount', 'installments', 'payer', 'additional_info', 'application_fee'
      ];
 
 }

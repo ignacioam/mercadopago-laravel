@@ -1,5 +1,5 @@
 {
-    "name": "ignacio/pkg-mercadopago-laravel",
+    "name": "ignaciom/package-mercadopago",
     "description": "Package mercadopago for laravel",
     "type": "library",
     "license": "MIT",
