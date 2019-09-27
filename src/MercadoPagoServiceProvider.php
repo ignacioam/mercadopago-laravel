@@ -2,7 +2,6 @@
 
 namespace Ignacio\MercadoPago;
 
-use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
 use Ignacio\MercadoPago\Repositories\PayRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -58,7 +57,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       */
      private function registerPublic(){
           $this->publishes([
-               __DIR__.'/../public/js/mercadopago.js' => public_path('js/mercadopago/mercadopago.js'),
+               __DIR__.'/../public/js/mercadopago.js' => public_path('mercadopago/mp.js'),
           ], 'mercadopago-js');
      }
 

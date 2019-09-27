@@ -41,8 +41,12 @@ class PayRepository implements PayRepositoryInterface{
                     'items' => $pay->additional_info['items']
                )
           ]);
+          
+          $response = $payment->save();
 
-          $payment->save();
-          dd($payment);
+          if($response){
+               return ['status' => 'success', 'response' => $payment];
+          }
+          return ['status' => 'error', 'response' => $payment, 'errors' => 'todos los errores'];
      }
 }
