@@ -2,6 +2,6 @@
 
 namespace Ignacio\MercadoPago\Repositories\Interfaces;
 
-interface PayRepositoryInterface{
+interface MethodRepositoryInterface{
      function getAll();
 }

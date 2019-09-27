@@ -33,7 +33,6 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       */
      private function registerResources(){
           $this->registerFacades();
-          $this->registerRoutes();
      }
 
      /**
@@ -57,17 +56,11 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       */
      private function registerPublic(){
           $this->publishes([
-               __DIR__.'/../public/js/mercadopago.js' => public_path('mercadopago/mp.js'),
-          ], 'mercadopago-js');
-     }
-
-     /**
-      * Routes
-      *
-      * @return void
-      */
-     private function registerRoutes(){
-          $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+               __DIR__.'/../public/js/mercadopago.js' => public_path('vendor/mercadopago/mp.js'),
+          ], 'ignacio/mercadopago');
+          $this->publishes([
+               __DIR__.'/../public/js.blade.php' => resource_path('views/vendor/mercadopago/include_mp.blade.php'),
+          ], 'ignacio/mercadopago');
      }
 
      /**

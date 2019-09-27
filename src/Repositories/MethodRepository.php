@@ -2,9 +2,10 @@
 
 namespace Ignacio\MercadoPago\Repositories;
 
+use Ignacio\MercadoPago\Repositories\Interfaces\MethodRepositoryInterface;
 use MercadoPago\{SDK};
 
-class MethodRepository
+class MethodRepository implements MethodRepositoryInterface
 {
 
      const URI = '/v1/payment_methods';
