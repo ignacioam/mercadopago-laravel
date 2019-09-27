@@ -25,7 +25,7 @@ class PayRepository implements PayRepositoryInterface{
                'external_reference' => $pay->external_reference,
                'statement_descriptor' => $pay->statement_descriptor,
                'payment_method_id' => $pay->payment_method_id,
-               'transaction_amount' => $transaction_amount,
+               'transaction_amount' => $pay->transaction_amount,
                'installments' => $pay->installments,
                'payer' => array(
                     'email' => $pay->payer['email'],
