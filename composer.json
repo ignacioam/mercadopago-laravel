@@ -3,6 +3,13 @@
     "description": "Package mercadopago for laravel",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "mercadopago",
+        "laravel",
+        "package",
+        "libreria",
+        "library"
+    ],
     "authors": [
         {
             "name": "Ignacio Martins",
