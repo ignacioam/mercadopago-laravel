@@ -20,7 +20,7 @@ class PayRepository implements PayRepositoryInterface{
       * @param Pay $pay
       * @return void
       */
-     public function pay(Pay $pay){
+     public function pay(Pay $pay) : Array{
           
           $payment = new Payment([
                'token' => $pay->token,
@@ -59,7 +59,7 @@ class PayRepository implements PayRepositoryInterface{
       *
       * @return void
       */
-     public function generateRandomExternalReference(){
+     public function generateRandomExternalReference() : String{
           return substr(Hash::make(Carbon::now()), 0, 16);
      }
 }
