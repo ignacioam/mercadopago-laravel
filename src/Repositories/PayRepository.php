@@ -5,6 +5,8 @@ namespace Ignacio\MercadoPago\Repositories;
 use MercadoPago\{SDK, Payment};
 use Ignacio\MercadoPago\Models\Pay;
 use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
+use Carbon\Carbon;
+use Hash;
 
 class PayRepository implements PayRepositoryInterface{
      
@@ -25,7 +27,8 @@ class PayRepository implements PayRepositoryInterface{
                'external_reference' => $pay->external_reference,
                'statement_descriptor' => $pay->statement_descriptor,
                'payment_method_id' => $pay->payment_method_id,
-               'transaction_amount' => $pay->transaction_amount,
+               'transaction_amount' => empty($pay->application_fee) ? $pay->transaction_amount : ($pay->transaction_amount + $pay->application_fee),
+               'application_fee' => $pay->application_fee,
                'installments' => $pay->installments,
                'payer' => array(
                     'email' => $pay->payer['email'],
@@ -48,6 +51,15 @@ class PayRepository implements PayRepositoryInterface{
           if($response){
                return ['status' => 'success', 'response' => $payment];
           }
-          return ['status' => 'error', 'response' => $payment, 'errors' => 'todos los errores'];
+          return ['status' => 'error', 'response' => $payment, 'errors' => $payment->error->causes];
+     }
+
+     /**
+      * Generate random key
+      *
+      * @return void
+      */
+     public function generateRandomExternalReference(){
+          return substr(Hash::make(Carbon::now()), 0, 16);
      }
 }
