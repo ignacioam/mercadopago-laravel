@@ -21,7 +21,6 @@ class PayRepository implements PayRepositoryInterface{
       * @return void
       */
      public function pay(Pay $pay) : Array{
-          
           $payment = new Payment([
                'token' => $pay->token,
                'external_reference' => $pay->external_reference,
