@@ -1,4 +1,4 @@
-<p align="center"><h2>MercadoPago - Laravel</h2></p>
+<p align="center"><img src="https://i.imgur.com/pbVb1q2.png" width="400"></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/ignaciom/package-mercadopago"><img src="https://poser.pugx.org/ignaciom/package-mercadopago/v/stable" alt="Build Status"></a>
@@ -7,24 +7,29 @@
 <a href="https://packagist.org/packages/ignaciom/package-mercadopago"><img src="https://poser.pugx.org/ignaciom/package-mercadopago/license" alt="License"></a>
 </p>
 
-## About package
+Primer paquete de Laravel sobre MercadoPago.
 
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium architecto quisquam voluptatum reiciendis vero placeat quasi, perferendis ducimus rem. Temporibus eos et nam, dolores quibusdam eius dolore dicta id tempora.
+# :fire: Características
+Próximamente.
 
-- Lorem ipsum dolor sit amet consectetur
-- Lorem ipsum dolor sit amet consectetur
-- Lorem ipsum dolor sit amet consectetur
+# :wrench: Compatibilidad
 
-Laudantium architecto quisquam voluptatum reiciendis vero placeat quasi.
+Debes respetar las versiones de la librería con la versión de Laravel que estés utilizando.
+En caso de que estés usando una versión de Laravel que no se encuentre en la tabla deberás actualizar tu proyecto a alguna de las que se muestran.
 
-## How to implement it
+> Las versiones de las librería pueden sufrir cambios que pueden interferir en la forma que se implementa. Mantente informado de las versiones [aquí](https://www.google.com).
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit [documentation](https://ignaciomartins.com/docs) perferendis ducimus rem. Temporibus eos et nam, dolores quibusdam eius dolore dicta id tempora.
+| Lib Versión | Laravel Versión | PHP Versión| Soporte |
+|--|--|--|--|
+| 1.0.0 | ^5.8 | ^7.2 | Sí |
+|--|--|--|--|
 
-## Suggestions
 
-Perferendis ducimus rem. Temporibus eos et nam, dolores quibusdam eius dolore dicta id tempora [ig.mar.oli@gmail.com](mailto:ig.mar.oli@gmail.com). Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+# :computer: Instalación
+Instalar el paquete en tu proyecto de Laravel.
 
-## License
+    composer require ignaciom/package-mercadopago 
 
-The package is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# :mortar_board: Aprender a usar la librería
+
+Puedes encontrar la documentación completa [aqui](https://www.google.com).
