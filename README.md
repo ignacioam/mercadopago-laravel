@@ -58,9 +58,9 @@ Luego que termine de publicar los archivos usted vera en la estructura de su pro
 			 - :open_file_folder:mercadopago
 				 - :page_facing_up:include_mp.blade.php
 
-**proyecto/config/mercadopago.php**: Archivo de configuración.
-**proyecto/public/vendor/mercadopago/mp.js**: Archivo para manipular los formularios.
-**proyecto/views/vendor/mercadopago/include_mp.blade.php**: Archivo que contiene los scripts necesarios para poder hacer uso de mercadopago. 
+**proyecto/config/mercadopago.php**: Archivo de configuración. <br>
+**proyecto/public/vendor/mercadopago/mp.js**: Archivo para manipular los formularios. <br>
+**proyecto/views/vendor/mercadopago/include_mp.blade.php**: Archivo que contiene los scripts necesarios para poder hacer uso de mercadopago. <br>
 
 <br>
 
