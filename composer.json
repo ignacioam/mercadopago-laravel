@@ -8,7 +8,10 @@
         "laravel",
         "package",
         "libreria",
-        "library"
+        "library",
+        "mp",
+        "laravel mercadopago",
+        "mercadopago laravel"
     ],
     "authors": [
         {
