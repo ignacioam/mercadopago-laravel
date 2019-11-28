@@ -46,17 +46,17 @@ Luego de instalar la librería debes agregar dos valores en el archivo **.env**.
 
 Luego que termine de publicar los archivos usted vera en la estructura de su proyecto nuevos archivos. 
 
-:open_file_folder: proyecto
-&emsp;&emsp;&emsp; :open_file_folder:config
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; :page_facing_up:mercadopago.php
-&emsp;&emsp;&emsp; :open_file_folder:public
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; :open_file_folder:vendor
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  :open_file_folder:mercadopago
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; :page_facing_up:mp.js
-&emsp;&emsp;&emsp; :open_file_folder:views
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; :open_file_folder:vendor
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  :open_file_folder:mercadopago
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; :page_facing_up:include_mp.blade.php
+ - :open_file_folder: proyecto
+	 - :open_file_folder:config
+		 - :page_facing_up:mercadopago.php
+	 - :open_file_folder:public 
+		 - :open_file_folder:vendor
+			 - :open_file_folder:mercadopago
+				 - :page_facing_up:mp.js
+	 -  :open_file_folder:views
+		 -  :open_file_folder:vendor
+			 - :open_file_folder:mercadopago
+				 - :page_facing_up:include_mp.blade.php
 
 **proyecto/config/mercadopago.php**: Archivo de configuración.
 **proyecto/public/vendor/mercadopago/mp.js**: Archivo para manipular los formularios.
