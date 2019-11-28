@@ -20,7 +20,7 @@
             "email": "ig.mar.oli@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "mercadopago/dx-php": "dev-master"
     },

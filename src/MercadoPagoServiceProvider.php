@@ -44,7 +44,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
           $this->mergeConfigFrom(__DIR__.'/../config/mercadopago.php', "mercadopago");
           $this->publishes([
                __DIR__.'/../config/mercadopago.php' => config_path('mercadopago.php'),
-          ]);
+          ], 'ignacio/mercadopago');
 
           $this->registerPublic();
      }
