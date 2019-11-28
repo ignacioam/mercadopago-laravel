@@ -3,6 +3,7 @@
     "description": "Package mercadopago for laravel",
     "type": "library",
     "license": "MIT",
+    "version": "v1.0.0",
     "keywords": [
         "mercadopago",
         "laravel",
