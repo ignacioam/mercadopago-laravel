@@ -19,6 +19,7 @@ class CustomerRepository implements CustomerRepositoryInterface{
       * @return bool
       */
      public function create(ClientCustomer $clientCustomer) : Array{
+
           $customer = new Customer();
           $customer->email = $clientCustomer->email;
           $customer->first_name = $clientCustomer->first_name;
@@ -27,6 +28,12 @@ class CustomerRepository implements CustomerRepositoryInterface{
                'area_code' => $customer->phone->area_code,
                'number' => $customer->phone->number
           );
+          $customer->identification = array(
+               'type' => $customer->identification->type,
+               'number' => $customer->identification->number
+          );
+          $customer->description = $customer->description;
+
           $response = $customer->save();
 
           if($response){
@@ -43,13 +50,18 @@ class CustomerRepository implements CustomerRepositoryInterface{
       */
      public function update(String $customer_id, ClientCustomer $clientCustomer) : Array{
           $customer = Customer::find_by_id($customer_id);
-          $customer->email = $clientCustomer->email;
           $customer->first_name = $clientCustomer->first_name;
           $customer->last_name = $clientCustomer->last_name;
           $customer->phone  = array(
                'area_code' => $customer->phone->area_code,
                'number' => $customer->phone->number
           );
+          $customer->identification = array(
+               'type' => $customer->identification->type,
+               'number' => $customer->identification->number
+          );
+          $customer->description = $customer->description;
+
           $response = $customer->save();
 
           if($response){

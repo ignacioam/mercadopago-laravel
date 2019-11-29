@@ -12,7 +12,7 @@ class ClientCustomer extends Model{
      * @var array
      */
      protected $fillable = [
-          'email', 'first_name', 'last_name', 'phone', 'identification', 'default_address', 'address', 'date_registered', 'description', 'date_created', 'date_last_updated', 'metadata','default_card', 'cards', 'addresses', 'live_mode'
+          'email', 'first_name', 'last_name', 'phone', 'identification', 'description', 'address'
      ];
 
 }

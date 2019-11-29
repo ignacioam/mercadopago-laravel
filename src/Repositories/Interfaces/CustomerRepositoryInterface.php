@@ -2,7 +2,7 @@
 
 namespace Ignacio\MercadoPago\Repositories\Interfaces;
 
-use Ignacio\MercadoPago\Models\ClientCustomer;
+use Ignacio\MercadoPago\Models\{ClientCard, ClientCustomer};
 
 interface CustomerRepositoryInterface{
      function create(ClientCustomer $customer) : Array;
