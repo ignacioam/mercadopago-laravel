@@ -72,6 +72,20 @@ class CustomerRepository implements CustomerRepositoryInterface{
      }
 
      /**
+      * Add or update customer
+      *
+      * @param ClientCustomer $clientCustomer
+      * @return Array
+      */
+     public function createOrUpdate(ClientCustomer $clientCustomer) : Array{
+          $customer = $this->findByEmail($clientCustomer->email);
+          if(empty($customer[0])){
+              return $this->create($clientCustomer);
+          }
+          return $this->update($customer[0]->id, $clientCustomer);
+     }
+
+     /**
       * Add card in customer
       *
       * @return Array
@@ -92,19 +106,6 @@ class CustomerRepository implements CustomerRepositoryInterface{
                return ['status' => 'success', 'response' => $card];
           }
           return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
-     }
-     /**
-      * Add or update customer
-      *
-      * @param ClientCustomer $clientCustomer
-      * @return Array
-      */
-     public function createOrUpdate(ClientCustomer $clientCustomer) : Array{
-          $customer = $this->findByEmail($clientCustomer->email);
-          if(empty($customer[0])){
-              return $this->create($clientCustomer);
-          }
-          return $this->update($customer[0]->id, $clientCustomer);
      }
 
      /**
