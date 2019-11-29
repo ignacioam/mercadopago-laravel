@@ -2,7 +2,7 @@
 
 namespace Ignacio\MercadoPago;
 
-use Ignacio\MercadoPago\Models\Pay;
+use Ignacio\MercadoPago\Models\{ClientCustomer, Pay};
 use Ignacio\MercadoPago\Repositories\Interfaces\{CustomerRepositoryInterface, PayRepositoryInterface};
 
 class Facade {
@@ -39,5 +39,7 @@ class Facade {
      /**
       * CUSTOMER
       */
-      
+     public function createCustomer(ClientCustomer $clientCustomer){
+          return $this->customerRepository->create($clientCustomer);
+     }
 }
