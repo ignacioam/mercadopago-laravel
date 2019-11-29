@@ -3,13 +3,11 @@
 namespace Ignacio\MercadoPago;
 
 use Ignacio\MercadoPago\Models\{ClientCustomer, Pay};
-use Ignacio\MercadoPago\Repositories\Interfaces\{CustomerRepositoryInterface, PayRepositoryInterface};
 
 class Gateway {
      /**
       * Property repositories
       *
-      * @var PayRepositoryInterface
       */
      private $payRepository, $customerRepository;
 
@@ -19,8 +17,8 @@ class Gateway {
       */
      public function __construct()
      {
-          $this->payRepository = new PayRepositoryInterface();
-          $this->customerRepository = new CustomerRepositoryInterface();
+          $this->payRepository = new PayRepository();
+          $this->customerRepository = new CustomerRepository();
      }
 
      /**
