@@ -37,21 +37,21 @@ class CustomerRepository implements CustomerRepositoryInterface{
       *
       * @return Array
       */
-     public function addCard(String $customer_id, ClientCard $clientCard) : Array{
-          $customer = Customer::find_by_id($clientCard->customer_id);
+     // public function addCard(String $customer_id, ClientCard $clientCard) : Array{
+     //      $customer = Customer::find_by_id($clientCard->customer_id);
           
-          if(empty($customer)){
-               return ['status' => 'error', 'response' => 400, 'errors' => "No se encontro el customer."];
-          }
+     //      if(empty($customer)){
+     //           return ['status' => 'error', 'response' => 400, 'errors' => "No se encontro el customer."];
+     //      }
 
-          $card = new Card();
-          $card->token = $clientCard->token;
-          $card->customer_id = $customer->id;
-          $response = $card->save();
+     //      $card = new Card();
+     //      $card->token = $clientCard->token;
+     //      $card->customer_id = $customer->id;
+     //      $response = $card->save();
 
-          if($response){
-               return ['status' => 'success', 'response' => $card];
-          }
-          return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
-     }
+     //      if($response){
+     //           return ['status' => 'success', 'response' => $card];
+     //      }
+     //      return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
+     // }
 }
