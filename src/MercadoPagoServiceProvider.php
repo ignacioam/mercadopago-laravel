@@ -26,8 +26,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
      * @return void
      */
      public function register(){
-          $this->app->bind(PayRepositoryInterface::class, PayRepository::class);
-          $this->app->bind(CustomerRepositoryInterface::class, CustomerRepository::class);
+          
      }
 
      /**
