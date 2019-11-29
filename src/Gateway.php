@@ -39,4 +39,7 @@ class Gateway {
      public function createCustomer(ClientCustomer $clientCustomer){
           return $this->customerRepository->create($clientCustomer);
      }
+     public function updateCustomer(String $customer_id, ClientCustomer $clientCustomer){
+          return $this->customerRepository->update($customer_id, $clientCustomer);
+     }
 }
