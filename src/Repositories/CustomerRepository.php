@@ -52,7 +52,6 @@ class CustomerRepository implements CustomerRepositoryInterface{
           if($response){
                return ['status' => 'success', 'response' => $card];
           }
-          return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];
-          
+          return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
      }
 }

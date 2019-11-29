@@ -56,7 +56,7 @@ class PayRepository implements PayRepositoryInterface{
      /**
       * Generate random key
       *
-      * @return void
+      * @return String
       */
      public function generateRandomExternalReference() : String{
           return substr(Hash::make(Carbon::now()), 0, 16);
