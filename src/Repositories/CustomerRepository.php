@@ -25,14 +25,14 @@ class CustomerRepository implements CustomerRepositoryInterface{
           $customer->first_name = $clientCustomer->first_name;
           $customer->last_name = $clientCustomer->last_name;
           $customer->phone  = array(
-               'area_code' => $customer->phone->area_code,
-               'number' => $customer->phone->number
-          );
-          $customer->identification = array(
-               'type' => $customer->identification->type,
-               'number' => $customer->identification->number
-          );
-          $customer->description = $customer->description;
+                'area_code' => $clientCustomer->phone['area_code'],
+                'number' => $clientCustomer->phone['number']
+            );
+            $customer->identification = array(
+                    'type' => $clientCustomer->identification['type'],
+                    'number' => $clientCustomer->identification['number']
+            );
+            $customer->description = $clientCustomer->description;
 
           $response = $customer->save();
 
@@ -49,20 +49,21 @@ class CustomerRepository implements CustomerRepositoryInterface{
       * @return Array
       */
      public function update(String $customer_id, ClientCustomer $clientCustomer) : Array{
+          
           $customer = Customer::find_by_id($customer_id);
           $customer->first_name = $clientCustomer->first_name;
           $customer->last_name = $clientCustomer->last_name;
           $customer->phone  = array(
-               'area_code' => $customer->phone->area_code,
-               'number' => $customer->phone->number
+               'area_code' => $clientCustomer->phone['area_code'],
+               'number' => $clientCustomer->phone['number']
           );
           $customer->identification = array(
-               'type' => $customer->identification->type,
-               'number' => $customer->identification->number
+               'type' => $clientCustomer->identification['type'],
+               'number' => $clientCustomer->identification['number']
           );
-          $customer->description = $customer->description;
+          $customer->description = $clientCustomer->description;
 
-          $response = $customer->save();
+          $response = $customer->update();
 
           if($response){
                return ['status' => 'success', 'response' => $customer];
@@ -91,5 +92,14 @@ class CustomerRepository implements CustomerRepositoryInterface{
                return ['status' => 'success', 'response' => $card];
           }
           return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
+     }
+     /**
+      * Get Customer by email
+      *
+      * @param String $email
+      * @return Customer
+      */
+     public function findByEmail(String $email){
+          return Customer::read(array("email" => $email));
      }
 }

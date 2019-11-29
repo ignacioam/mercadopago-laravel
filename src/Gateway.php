@@ -42,4 +42,7 @@ class Gateway {
      public function updateCustomer(String $customer_id, ClientCustomer $clientCustomer){
           return $this->customerRepository->update($customer_id, $clientCustomer);
      }
+     public function findByEmailCustomer(String $email){
+          return $this->customerRepository->findByEmailCustomer($email);
+     }
 }
