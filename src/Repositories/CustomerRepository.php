@@ -37,7 +37,7 @@ class CustomerRepository implements CustomerRepositoryInterface{
       *
       * @return Array
       */
-     public function addCard(ClientCard $clientCard) : Array {
+     public function addCard(String $customer_id, ClientCard $clientCard) : Array{
           $customer = Customer::find_by_id($clientCard->customer_id);
           
           if(empty($customer)){
