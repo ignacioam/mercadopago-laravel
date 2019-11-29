@@ -3,6 +3,7 @@
 namespace Ignacio\MercadoPago;
 
 use Ignacio\MercadoPago\Models\{ClientCustomer, Pay};
+use Ignacio\MercadoPago\Repositories\{CustomerRepository, PayRepository};
 
 class Gateway {
      /**
