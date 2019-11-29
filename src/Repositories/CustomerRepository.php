@@ -25,14 +25,14 @@ class CustomerRepository implements CustomerRepositoryInterface{
           $customer->first_name = $clientCustomer->first_name;
           $customer->last_name = $clientCustomer->last_name;
           $customer->phone  = array(
-                'area_code' => $clientCustomer->phone['area_code'],
-                'number' => $clientCustomer->phone['number']
-            );
-            $customer->identification = array(
-                    'type' => $clientCustomer->identification['type'],
-                    'number' => $clientCustomer->identification['number']
-            );
-            $customer->description = $clientCustomer->description;
+               'area_code' => empty($clientCustomer->phone['area_code']) ? null : $clientCustomer->phone['area_code'],
+               'number' => empty($clientCustomer->phone['number']) ? null : $clientCustomer->phone['number'],
+          );
+          $customer->identification = array(
+               'type' => empty($clientCustomer->identification['type']) ? null : $clientCustomer->identification['type'],
+               'number' => empty($clientCustomer->identification['number']) ? null : $clientCustomer->identification['number']
+          );
+          $customer->description = $clientCustomer->description;
 
           $response = $customer->save();
 
@@ -54,12 +54,12 @@ class CustomerRepository implements CustomerRepositoryInterface{
           $customer->first_name = $clientCustomer->first_name;
           $customer->last_name = $clientCustomer->last_name;
           $customer->phone  = array(
-               'area_code' => $clientCustomer->phone['area_code'],
-               'number' => $clientCustomer->phone['number']
+               'area_code' => empty($clientCustomer->phone['area_code']) ? null : $clientCustomer->phone['area_code'],
+               'number' => empty($clientCustomer->phone['number']) ? null : $clientCustomer->phone['number'],
           );
           $customer->identification = array(
-               'type' => $clientCustomer->identification['type'],
-               'number' => $clientCustomer->identification['number']
+               'type' => empty($clientCustomer->identification['type']) ? null : $clientCustomer->identification['type'],
+               'number' => empty($clientCustomer->identification['number']) ? null : $clientCustomer->identification['number']
           );
           $customer->description = $clientCustomer->description;
 
@@ -94,12 +94,27 @@ class CustomerRepository implements CustomerRepositoryInterface{
           return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
      }
      /**
+      * Add or update customer
+      *
+      * @param ClientCustomer $clientCustomer
+      * @return Array
+      */
+     public function createOrUpdate(ClientCustomer $clientCustomer) : Array{
+          $customer = $this->findByEmail($clientCustomer->email);
+
+          if($customer->total > 0){
+               return $this->update($customer->storage[0]->id, $clientCustomer);
+          }
+          return $this->create($clientCustomer);
+     }
+
+     /**
       * Get Customer by email
       *
       * @param String $email
       * @return Customer
       */
-     public function findByEmail(String $email){
-          return Customer::read(array("email" => $email));
+     private function findByEmail(String $email){
+          return Customer::search(array("email" => $email));
      }
 }
