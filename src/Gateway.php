@@ -43,6 +43,6 @@ class Gateway {
           return $this->customerRepository->update($customer_id, $clientCustomer);
      }
      public function findByEmailCustomer(String $email){
-          return $this->customerRepository->findByEmailCustomer($email);
+          return $this->customerRepository->findByEmail($email);
      }
 }
