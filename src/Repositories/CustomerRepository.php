@@ -101,11 +101,10 @@ class CustomerRepository implements CustomerRepositoryInterface{
       */
      public function createOrUpdate(ClientCustomer $clientCustomer) : Array{
           $customer = $this->findByEmail($clientCustomer->email);
-
-          if($customer->total > 0){
-               return $this->update($customer->storage[0]->id, $clientCustomer);
+          if(empty($customer[0])){
+              return $this->create($clientCustomer);
           }
-          return $this->create($clientCustomer);
+          return $this->update($customer[0]->id, $clientCustomer);
      }
 
      /**
