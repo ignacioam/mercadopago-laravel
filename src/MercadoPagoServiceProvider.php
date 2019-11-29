@@ -74,7 +74,7 @@ class MercadoPagoServiceProvider extends ServiceProvider{
       */
      protected function registerFacades(){
           $this->app->singleton('MP', function($app){
-               return new \Ignacio\MercadoPago\Facade(new PayRepositoryInterface(), new CustomerRepositoryInterface());
+               return new \Ignacio\MercadoPago\Gateway();
           });
      }
 }

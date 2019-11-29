@@ -5,7 +5,7 @@ namespace Ignacio\MercadoPago;
 use Ignacio\MercadoPago\Models\{ClientCustomer, Pay};
 use Ignacio\MercadoPago\Repositories\Interfaces\{CustomerRepositoryInterface, PayRepositoryInterface};
 
-class Facade {
+class Gateway {
      /**
       * Property repositories
       *
@@ -16,13 +16,11 @@ class Facade {
      /**
       * Construct
       *
-      * @param PayRepositoryInterface $pay
-      * @param CustomerRepositoryInterface $customer
       */
-     public function __construct(PayRepositoryInterface $payRepository, CustomerRepositoryInterface $customerRepository)
+     public function __construct()
      {
-          $this->payRepository = $payRepository;
-          $this->customerRepository = $customerRepository;
+          $this->payRepository = new PayRepositoryInterface();
+          $this->customerRepository = new CustomerRepositoryInterface();
      }
 
      /**
