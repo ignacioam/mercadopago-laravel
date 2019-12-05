@@ -6,7 +6,7 @@ use MercadoPago\{SDK, Payment};
 use Ignacio\MercadoPago\Models\Pay;
 use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
 use Carbon\Carbon;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 
 class PayRepository implements PayRepositoryInterface{
      
@@ -59,6 +59,6 @@ class PayRepository implements PayRepositoryInterface{
       * @return String
       */
      public function generateRandomExternalReference() : String{
-          return substr(Hash::make(Carbon::now()), 0, 16);
+          return base64_encode(substr(Hash::make(Carbon::now()), 0, 16));
      }
 }
