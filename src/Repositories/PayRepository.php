@@ -52,6 +52,16 @@ class PayRepository implements PayRepositoryInterface{
           }
           return ['status' => 'error', 'response' => $payment, 'errors' => $payment->error->causes];
      }
+     
+     /**
+      * Get all info 
+      *
+      * @param String $id
+      * @return Payment
+      */
+     public function get(String $id){
+          return Payment::get($id);
+     }
 
      /**
       * Generate random key

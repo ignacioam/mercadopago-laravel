@@ -28,7 +28,9 @@ class Gateway {
      public function pay(Pay $pay){
           return $this->payRepository->pay($pay);
      }
-
+     public function getPaymentById(String $id){
+          return $this->payRepository->get($id);
+     }
      public function generateRandomExternalReference(){
           return $this->payRepository->generateRandomExternalReference();
      }
