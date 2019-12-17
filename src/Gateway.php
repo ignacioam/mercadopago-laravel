@@ -2,7 +2,7 @@
 
 namespace Ignacio\MercadoPago;
 
-use Ignacio\MercadoPago\Models\{ClientCustomer, Pay};
+use Ignacio\MercadoPago\Models\{ClientCard, ClientCustomer, Pay};
 use Ignacio\MercadoPago\Repositories\{CustomerRepository, PayRepository};
 
 class Gateway {
@@ -46,5 +46,8 @@ class Gateway {
      }
      public function createOrUpdateCustomer(ClientCustomer $clientCustomer) : Array{
           return $this->customerRepository->createOrUpdate($clientCustomer);
+     }
+     public function addCardInCustomer(String $customer_id, ClientCard $clientCard) : Array{
+          return $this->customerRepository->addCard($customer_id, $clientCard);  
      }
 }
