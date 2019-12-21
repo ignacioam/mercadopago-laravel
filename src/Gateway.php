@@ -50,4 +50,7 @@ class Gateway {
      public function addCardInCustomer(String $customer_id, ClientCard $clientCard) : Array{
           return $this->customerRepository->addCard($customer_id, $clientCard);  
      }
+     public function getCustomerById(String $id){
+          return $this->customerRepository->getById($id);
+     }
 }
