@@ -41,6 +41,7 @@ class CustomerRepository implements CustomerRepositoryInterface{
           }
           return ['status' => 'error', 'response' => $customer, 'errors' => $customer->error->causes];
      }
+     
      /**
       * Update customer
       *
@@ -106,6 +107,16 @@ class CustomerRepository implements CustomerRepositoryInterface{
                return ['status' => 'success', 'response' => $card];
           }
           return ['status' => 'error', 'response' => $card, 'errors' => $card->error->causes];   
+     }
+
+     /**
+      * Get customer by id
+      *
+      * @return Customer
+      */
+     public function getById(String $id){
+          $customer = Customer::find_by_id($id);
+          return $customer;
      }
 
      /**

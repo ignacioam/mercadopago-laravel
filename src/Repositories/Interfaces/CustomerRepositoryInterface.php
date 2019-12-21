@@ -9,4 +9,5 @@ interface CustomerRepositoryInterface{
      function addCard(String $customer_id, ClientCard $clientCard) : Array;
      function update(String $customer_id, ClientCustomer $clientCustomer) : Array;
      function createOrUpdate(ClientCustomer $clientCustomer) : Array;
+     function getById(String $id);
 }
