@@ -80,12 +80,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "382e7f4db9a12dc6c19431743a2b096041bcdd62"
+                "reference": "766a5a5c8694166f522c534a6663786b847378e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/382e7f4db9a12dc6c19431743a2b096041bcdd62",
-                "reference": "382e7f4db9a12dc6c19431743a2b096041bcdd62",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/766a5a5c8694166f522c534a6663786b847378e7",
+                "reference": "766a5a5c8694166f522c534a6663786b847378e7",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 "redis",
                 "xcache"
             ],
-            "time": "2019-11-29T15:36:20+00:00"
+            "time": "2019-12-20T18:18:46+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -681,12 +681,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mercadopago/dx-php.git",
-                "reference": "39e3c873c87fbcaf7746991649277708e0312f46"
+                "reference": "4dcd9d09d4ee46080a64729ed262d9580c2c40b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/39e3c873c87fbcaf7746991649277708e0312f46",
-                "reference": "39e3c873c87fbcaf7746991649277708e0312f46",
+                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/4dcd9d09d4ee46080a64729ed262d9580c2c40b3",
+                "reference": "4dcd9d09d4ee46080a64729ed262d9580c2c40b3",
                 "shasum": ""
             },
             "require": {
@@ -732,7 +732,7 @@
                 }
             ],
             "homepage": "https://github.com/mercadopago/dx-php",
-            "time": "2019-11-18T20:42:44+00:00"
+            "time": "2020-01-02T18:25:07+00:00"
         }
     ],
     "packages-dev": [],
