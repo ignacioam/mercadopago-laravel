@@ -613,12 +613,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/reflection.git",
-            "reference": "76bb6bc20afa3aedb85d273412bed9db255a754b"
+            "reference": "895c94dcee9703b134f4962a1bc60c4f6db86643"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/reflection/zipball/76bb6bc20afa3aedb85d273412bed9db255a754b",
-            "reference": "76bb6bc20afa3aedb85d273412bed9db255a754b",
+            "url": "https://api.github.com/repos/doctrine/reflection/zipball/895c94dcee9703b134f4962a1bc60c4f6db86643",
+            "reference": "895c94dcee9703b134f4962a1bc60c4f6db86643",
             "shasum": ""
         },
         "require": {
@@ -636,7 +636,7 @@
             "phpstan/phpstan-phpunit": "^0.11.0",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2019-12-03T15:26:53+00:00",
+        "time": "2020-01-04T17:34:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
