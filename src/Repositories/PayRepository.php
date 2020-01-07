@@ -21,6 +21,11 @@ class PayRepository implements PayRepositoryInterface{
       * @return void
       */
      public function pay(Pay $pay, String $accessToken = null) : Array{
+
+          if($accessToken != null){
+               SDK::setAccessToken($accessToken);
+          }
+
           $payment = new Payment([
                'token' => $pay->token,
                'external_reference' => $pay->external_reference,
@@ -33,7 +38,7 @@ class PayRepository implements PayRepositoryInterface{
                     'identification' => array(
                          "type" => $pay->payer['identification']['type'],
                          "number" => $pay->payer['identification']['number'],
-                     )
+                    )
                ),
                'additional_info' => array(
                     'payer' => array(
@@ -52,7 +57,7 @@ class PayRepository implements PayRepositoryInterface{
                $payment->application_fee = (float)$pay->application_fee;
           }
 
-          $response = $accessToken == null ?  $payment->save() : $payment->save(["custom_access_token" => $accessToken]);
+          $response = $payment->save();
 
           if($response){
                return ['status' => 'success', 'response' => $payment];
