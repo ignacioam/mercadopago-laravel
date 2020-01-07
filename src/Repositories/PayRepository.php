@@ -20,7 +20,7 @@ class PayRepository implements PayRepositoryInterface{
       * @param Pay $pay
       * @return void
       */
-     public function pay(Pay $pay) : Array{
+     public function pay(Pay $pay, String $accessToken = null) : Array{
           $payment = new Payment([
                'token' => $pay->token,
                'external_reference' => $pay->external_reference,
@@ -45,7 +45,7 @@ class PayRepository implements PayRepositoryInterface{
                )
           ]);
 
-          $response = $payment->save();
+          $response = $accessToken == null ?  $payment->save() :  $payment->save(["access_token" => $accessToken]);
 
           if($response){
                return ['status' => 'success', 'response' => $payment];
