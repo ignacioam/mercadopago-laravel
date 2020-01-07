@@ -25,8 +25,8 @@ class Gateway {
      /**
       * PAY
       */
-     public function pay(Pay $pay){
-          return $this->payRepository->pay($pay);
+     public function pay(Pay $pay, String $accessToken = null){
+          return $this->payRepository->pay($pay, $accessToken);
      }
      public function getPaymentById(String $id){
           return $this->payRepository->get($id);
