@@ -1,8 +1,21 @@
 window.Mercadopago.getIdentificationTypes();
 
+function addEvent(to, type, fn){
+    if(document.addEventListener){
+        to.addEventListener(type, fn, false);
+    } else if(document.attachEvent){
+        to.attachEvent('on'+type, fn);
+    } else {
+        to['on'+type] = fn;
+    }
+};
+
+addEvent(document.querySelector('#cardNumber'), 'keyup', guessingPaymentMethod);
+addEvent(document.querySelector('#cardNumber'), 'change', guessingPaymentMethod);
+
 function getBin() {
      const cardnumber = document.getElementById("cardNumber");
-     return cardnumber.value.substring(0,6);
+     return cardnumber.value.replace(/ /g, "").substring(0,6);
 }
 
 function guessingPaymentMethod(event) {
@@ -34,7 +47,7 @@ function setPaymentMethodInfo(status, response) {
                const input = document.createElement('input');
                input.setattribute('name', 'paymentMethodId');
                input.setAttribute('type', 'hidden');
-               input.setAttribute('value', response[0].id);     
+               input.setAttribute('value', response[0].id);
                form.appendChild(input);
           }
 
@@ -43,38 +56,35 @@ function setPaymentMethodInfo(status, response) {
                "amount": document.getElementById("amount").value,
           }, setInstallmentInfo);
      } else {
-          alert(`payment method info error: ${response}`);  
+          alert(`payment method info error: ${response}`);
      }
 }
 
 function setInstallmentInfo(status, response) {
-     var cu = response[0].payer_costs.length;
-     document.getElementById('installments').innerHTML = "";
+    console.log('Status:');
+    console.log(status);
+    console.log('Cuotas:');
+    console.log(response);
+    var selectorInstallments = document.querySelector("#installments"),
+    fragment = document.createDocumentFragment();
+    selectorInstallments.options.length = 0;
 
-     for(let i = 0; i < cu; i++){
-          let c = response[0].payer_costs[i];
-          var sel = document.getElementById('installments');
-          var opt = document.createElement('option');
-          opt.appendChild( document.createTextNode(c.recommended_message) );
-          opt.value = c.installments; 
-          sel.appendChild(opt);
-     }
-}
+    if (response.length > 0) {
+        var option = new Option("Escolha...", '-1'),
+        payerCosts = response[0].payer_costs;
+        fragment.appendChild(option);
+
+        for (var i = 0; i < payerCosts.length; i++) {
+            fragment.appendChild(new Option(payerCosts[i].recommended_message, payerCosts[i].installments));
+        }
+
+        selectorInstallments.appendChild(fragment);
+        selectorInstallments.removeAttribute('disabled');
+    }
+};
 
 doSubmit = false;
-addEvent(document.querySelector('input[data-checkout="cardNumber"]'), 'keyup', guessingPaymentMethod);
-addEvent(document.querySelector('input[data-checkout="cardNumber"]'), 'change', guessingPaymentMethod);
 addEvent(document.querySelector('#pay'), 'submit', doPay);
-
-function addEvent(el, eventName, handler) {
-     if (el.addEventListener) {
-          el.addEventListener(eventName, handler);
-     } else {
-          el.attachEvent('on' + eventName, function () {
-               handler.call(el);
-          });
-     }
-}
 
 function doPay(event){
      event.preventDefault();
