@@ -27,10 +27,13 @@ class PayRepository implements PayRepositoryInterface{
                'statement_descriptor' => $pay->statement_descriptor,
                'payment_method_id' => $pay->payment_method_id,
                'transaction_amount' => (float) empty($pay->application_fee) ? $pay->transaction_amount : ($pay->transaction_amount + $pay->application_fee),
-               'application_fee' => (float)$pay->application_fee,
                'installments' => (Int) empty($pay->installments) ? 1 : $pay->installments,
                'payer' => array(
                     'email' => $pay->payer['email'],
+                    'identification' => array(
+                         "type" => $pay->payer['identification']['type'],
+                         "number" => $pay->payer['identification']['number'],
+                     )
                ),
                'additional_info' => array(
                     'payer' => array(
@@ -45,7 +48,11 @@ class PayRepository implements PayRepositoryInterface{
                )
           ]);
 
-          $response = $accessToken == null ?  $payment->save() :  $payment->save(["custom_access_token" => $accessToken]);
+          if(!empty($pay->application_fee)){
+               $payment->application_fee = (float)$pay->application_fee;
+          }
+
+          $response = $accessToken == null ?  $payment->save() : $payment->save(["custom_access_token" => $accessToken]);
 
           if($response){
                return ['status' => 'success', 'response' => $payment];
