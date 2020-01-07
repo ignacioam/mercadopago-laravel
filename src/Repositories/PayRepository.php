@@ -45,7 +45,7 @@ class PayRepository implements PayRepositoryInterface{
                )
           ]);
 
-          $response = $accessToken == null ?  $payment->save() :  $payment->save(["access_token" => $accessToken]);
+          $response = $accessToken == null ?  $payment->save() :  $payment->save(["custom_access_token" => $accessToken]);
 
           if($response){
                return ['status' => 'success', 'response' => $payment];
