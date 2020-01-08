@@ -26,7 +26,7 @@ class PayRepository implements PayRepositoryInterface{
                try {
                     SDK::setAccessToken($accessToken);
                } catch (\Exception $e) {
-                    return ['status' => 'error_access_token', 'response' => $payment, 'errors' => ["Access Token incorrecto."]];
+                    return ['status' => 'error_access_token', 'errors' => ["Access Token incorrecto."]];
                }
           }
 
