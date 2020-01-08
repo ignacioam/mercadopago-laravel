@@ -23,7 +23,11 @@ class PayRepository implements PayRepositoryInterface{
      public function pay(Pay $pay, String $accessToken = null) : Array{
 
           if($accessToken != null){
-               SDK::setAccessToken($accessToken);
+               try {
+                    SDK::setAccessToken($accessToken);
+               } catch (\Exception $e) {
+                    return ['status' => 'error_access_token', 'response' => $payment, 'errors' => ["Access Token incorrecto."]];
+               }
           }
 
           $payment = new Payment([

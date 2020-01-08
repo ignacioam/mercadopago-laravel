@@ -1,11 +1,6 @@
 <?php
 
 namespace Ignacio\MercadoPago;
-
-use Ignacio\MercadoPago\Repositories\CustomerRepository;
-use Ignacio\MercadoPago\Repositories\Interfaces\CustomerRepositoryInterface;
-use Ignacio\MercadoPago\Repositories\Interfaces\PayRepositoryInterface;
-use Ignacio\MercadoPago\Repositories\PayRepository;
 use Illuminate\Support\ServiceProvider;
 
 class MercadoPagoServiceProvider extends ServiceProvider{
