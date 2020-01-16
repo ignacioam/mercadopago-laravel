@@ -115,6 +115,9 @@ class CustomerRepository implements CustomerRepositoryInterface{
       * @return Customer
       */
      public function getById(String $id){
+          if($id == null){
+               return null;
+          }
           $customer = Customer::find_by_id($id);
           return $customer;
      }
