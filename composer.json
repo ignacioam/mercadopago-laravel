@@ -22,7 +22,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "mercadopago/dx-php": "dev-master"
+        "mercadopago/dx-php": "v5.6.x-dev"
     },
     "require-dev": {
     },

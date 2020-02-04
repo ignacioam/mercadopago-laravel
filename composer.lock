@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c1c9de377ff7f9bc78135c48d98424f",
+    "content-hash": "4cb3fb8e4453e244ad5b32a36563f734",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -677,16 +677,16 @@
         },
         {
             "name": "mercadopago/dx-php",
-            "version": "dev-master",
+            "version": "v5.6.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mercadopago/dx-php.git",
-                "reference": "4dcd9d09d4ee46080a64729ed262d9580c2c40b3"
+                "reference": "e8764a9a09badcbdfe6dafcd440ac38713a77502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/4dcd9d09d4ee46080a64729ed262d9580c2c40b3",
-                "reference": "4dcd9d09d4ee46080a64729ed262d9580c2c40b3",
+                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/e8764a9a09badcbdfe6dafcd440ac38713a77502",
+                "reference": "e8764a9a09badcbdfe6dafcd440ac38713a77502",
                 "shasum": ""
             },
             "require": {
@@ -732,7 +732,7 @@
                 }
             ],
             "homepage": "https://github.com/mercadopago/dx-php",
-            "time": "2020-01-02T18:25:07+00:00"
+            "time": "2019-09-23T14:58:36+00:00"
         }
     ],
     "packages-dev": [],
