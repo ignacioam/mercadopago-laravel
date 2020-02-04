@@ -227,17 +227,17 @@
     },
     {
         "name": "doctrine/common",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "2.12.x-dev",
+        "version_normalized": "2.12.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/common.git",
-            "reference": "cb3944b0cf7c61dfe815a3ccc2c3037fb361556e"
+            "reference": "2053eafdf60c2172ee1373d1b9289ba1db7f1fc6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/common/zipball/cb3944b0cf7c61dfe815a3ccc2c3037fb361556e",
-            "reference": "cb3944b0cf7c61dfe815a3ccc2c3037fb361556e",
+            "url": "https://api.github.com/repos/doctrine/common/zipball/2053eafdf60c2172ee1373d1b9289ba1db7f1fc6",
+            "reference": "2053eafdf60c2172ee1373d1b9289ba1db7f1fc6",
             "shasum": ""
         },
         "require": {
@@ -259,7 +259,7 @@
             "squizlabs/php_codesniffer": "^3.0",
             "symfony/phpunit-bridge": "^4.0.5"
         },
-        "time": "2019-10-05T05:12:03+00:00",
+        "time": "2020-01-10T15:49:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -464,12 +464,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/lexer.git",
-            "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6"
+            "reference": "db47018871229c8287a31d1520c62ce400ddcae8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/lexer/zipball/5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
-            "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
+            "url": "https://api.github.com/repos/doctrine/lexer/zipball/db47018871229c8287a31d1520c62ce400ddcae8",
+            "reference": "db47018871229c8287a31d1520c62ce400ddcae8",
             "shasum": ""
         },
         "require": {
@@ -480,11 +480,11 @@
             "phpstan/phpstan": "^0.11.8",
             "phpunit/phpunit": "^8.2"
         },
-        "time": "2019-10-30T14:39:59+00:00",
+        "time": "2020-01-18T11:58:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.2.x-dev"
+                "dev-master": "1.3.x-dev"
             }
         },
         "installation-source": "source",
@@ -523,17 +523,17 @@
     },
     {
         "name": "doctrine/persistence",
-        "version": "1.3.x-dev",
-        "version_normalized": "1.3.9999999.9999999-dev",
+        "version": "1.4.x-dev",
+        "version_normalized": "1.4.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/persistence.git",
-            "reference": "99b196bbd4715a94fa100fac664a351ffa46d6a5"
+            "reference": "9c48ffbc1a1729ff4476ddc85faa177517bf3d0f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/persistence/zipball/99b196bbd4715a94fa100fac664a351ffa46d6a5",
-            "reference": "99b196bbd4715a94fa100fac664a351ffa46d6a5",
+            "url": "https://api.github.com/repos/doctrine/persistence/zipball/9c48ffbc1a1729ff4476ddc85faa177517bf3d0f",
+            "reference": "9c48ffbc1a1729ff4476ddc85faa177517bf3d0f",
             "shasum": ""
         },
         "require": {
@@ -541,7 +541,7 @@
             "doctrine/cache": "^1.0",
             "doctrine/collections": "^1.0",
             "doctrine/event-manager": "^1.0",
-            "doctrine/reflection": "^1.0",
+            "doctrine/reflection": "^1.1",
             "php": "^7.1"
         },
         "conflict": {
@@ -552,7 +552,7 @@
             "phpstan/phpstan": "^0.11",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2019-12-13T10:43:02+00:00",
+        "time": "2020-01-17T10:28:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -613,12 +613,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/reflection.git",
-            "reference": "895c94dcee9703b134f4962a1bc60c4f6db86643"
+            "reference": "c7588e0baa0afd586b3db807dd4643582ba1cb05"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/reflection/zipball/895c94dcee9703b134f4962a1bc60c4f6db86643",
-            "reference": "895c94dcee9703b134f4962a1bc60c4f6db86643",
+            "url": "https://api.github.com/repos/doctrine/reflection/zipball/c7588e0baa0afd586b3db807dd4643582ba1cb05",
+            "reference": "c7588e0baa0afd586b3db807dd4643582ba1cb05",
             "shasum": ""
         },
         "require": {
@@ -636,11 +636,11 @@
             "phpstan/phpstan-phpunit": "^0.11.0",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2020-01-04T17:34:07+00:00",
+        "time": "2020-01-29T21:57:36+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0.x-dev"
+                "dev-master": "1.2.x-dev"
             }
         },
         "installation-source": "source",
