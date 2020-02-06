@@ -155,17 +155,17 @@
     },
     {
         "name": "doctrine/collections",
-        "version": "1.6.x-dev",
-        "version_normalized": "1.6.9999999.9999999-dev",
+        "version": "1.7.x-dev",
+        "version_normalized": "1.7.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/collections.git",
-            "reference": "6b1e4b2b66f6d6e49983cebfe23a21b7ccc5b0d7"
+            "reference": "613162ea0b39fb581d4740039353358e275962fe"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/collections/zipball/6b1e4b2b66f6d6e49983cebfe23a21b7ccc5b0d7",
-            "reference": "6b1e4b2b66f6d6e49983cebfe23a21b7ccc5b0d7",
+            "url": "https://api.github.com/repos/doctrine/collections/zipball/613162ea0b39fb581d4740039353358e275962fe",
+            "reference": "613162ea0b39fb581d4740039353358e275962fe",
             "shasum": ""
         },
         "require": {
@@ -177,13 +177,8 @@
             "phpunit/phpunit": "^7.0",
             "vimeo/psalm": "^3.2.2"
         },
-        "time": "2019-11-13T13:07:11+00:00",
+        "time": "2020-02-05T18:30:56+00:00",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.6.x-dev"
-            }
-        },
         "installation-source": "source",
         "autoload": {
             "psr-4": {
@@ -317,12 +312,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/event-manager.git",
-            "reference": "629572819973f13486371cb611386eb17851e85c"
+            "reference": "c0d087c34cd5c2f86e7b840de9cecfb1e048dd52"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/event-manager/zipball/629572819973f13486371cb611386eb17851e85c",
-            "reference": "629572819973f13486371cb611386eb17851e85c",
+            "url": "https://api.github.com/repos/doctrine/event-manager/zipball/c0d087c34cd5c2f86e7b840de9cecfb1e048dd52",
+            "reference": "c0d087c34cd5c2f86e7b840de9cecfb1e048dd52",
             "shasum": ""
         },
         "require": {
@@ -335,7 +330,7 @@
             "doctrine/coding-standard": "^6.0",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2019-11-10T09:48:07+00:00",
+        "time": "2020-02-05T09:51:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
