@@ -38,8 +38,8 @@ class PayRepository implements PayRepositoryInterface{
                'transaction_amount' => (float) empty($pay->application_fee) ? $pay->transaction_amount : ($pay->transaction_amount + $pay->application_fee),
                'installments' => (Int) empty($pay->installments) ? 1 : $pay->installments,
                'payer' => array(
-                    // 'type' => empty($pay->payer['cardId']) ? null : 'customer',
-                    // 'id' => empty($pay->payer['id']) ? null : $pay->payer['id'],
+                    'type' => empty($pay->payer['cardId']) ? null : 'customer',
+                    'id' => empty($pay->payer['id']) ? null : $pay->payer['id'],
                     'email' => $pay->payer['email'],
                     'identification' => array(
                          "type" => $pay->payer['identification']['type'],
