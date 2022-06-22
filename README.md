@@ -10,6 +10,8 @@
 
 <center>Primer paquete de Laravel sobre MercadoPago.</center>
 
+## ⚠️⚠️ ÚSALO COMO MODO DE APRENDIZAJE. NO UTILICE ESTO EN UN PROYECTO REAL ⚠️⚠️
+
 ## :fire: Características
 Próximamente.
 
